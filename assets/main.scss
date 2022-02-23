@@ -34,7 +34,7 @@ li > ul, li > ol { margin-bottom: 0; }
 h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
 /** Links */
-a { color: rgb(4, 41, 248); text-decoration: none; }
+a { color: rgb(158, 158, 158); text-decoration: none; }
 /*a:visited { color: #1756a9; }*/
 a:hover { color: #111; text-decoration: underline; }
 .social-media-list a:hover { text-decoration: none; }
@@ -127,13 +127,13 @@ table td { border: 1px solid #e8e8e8; }
 
 .post-list-heading { 
   font-size: 21px; 
+  /*color: rgb(211, 150, 247);*/
   color: #fff;
+  /*background-color: rgb(241, 110, 241);*/
   background-color: violet;
   width: fit-content;
   font-family: monospace;
-  width: fit-content;
-  padding: 4px;
-  
+  padding:4px;
 }
 
 .post-list { margin-left: 0; list-style: none; }
@@ -147,6 +147,7 @@ table td { border: 1px solid #e8e8e8; }
   font-family: monospace;
   /*color: rgb(70, 97, 255);*/
   color: rgb(139, 156, 255);
+ 
 }
 
 /** Posts */
@@ -155,10 +156,9 @@ table td { border: 1px solid #e8e8e8; }
 }
 
 .post-title { 
-  font-size: 35px; 
+  font-size: 36px; 
   line-height: 1; 
-  font-family: monospace;
-  
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .rss-subscribe a{
@@ -178,7 +178,7 @@ table td { border: 1px solid #e8e8e8; }
 
 .post-content { margin-bottom: 30px; }
 .post-content h2 { font-size: 32px; }
-@media screen and (max-width: 800px) { .post-content h2 { font-size: 28px; } }
+@media screen and (max-width: 800px) { .post-content h2 { font-size: 28px; } .post-list-heading { font-size: 18px;}}
 .post-content h3 { font-size: 26px; }
 @media screen and (max-width: 800px) { .post-content h3 { font-size: 22px; } }
 .post-content h4 { font-size: 20px; }
@@ -246,3 +246,4 @@ table td { border: 1px solid #e8e8e8; }
 .highlight .vg { color: #008080; }
 .highlight .vi { color: #008080; }
 .highlight .il { color: #099; }
+
