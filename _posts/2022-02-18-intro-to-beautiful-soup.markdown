@@ -26,23 +26,23 @@ O que o Beautiful Soup faz é basicamente transformar estes documentos em objeto
 
 Você pode instalar o Beautiful Soup com o<a href="https://pypi.org/project/pip" target="_blank"> instalador de pacotes</a> do python:
 
-<code>
+```bash
 $ pip install beautifulsoup4
-</code>
+```
 
 
 Para fazer requisições http, vou usar a biblioteca Requests:
 
-<code>
+```bash
 $ python -m pip install requests
-</code>
+```
 
 Neste exemplo, irei extrair dados de uma página do website <a href="https://www.adam4eve.eu/" target="_blank">Adam4Eve</a>.
 
 
 Com todas as bibliotecas instaladas, começo o meu script python fazendo as importações:
 
-{% highlight ruby %}
+{% highlight python %}
 from bs4 import BeautifulSoup
 import requests
 {% endhighlight %}
@@ -50,7 +50,7 @@ import requests
 
 E então, escrevo as linhas:
 
-{% highlight ruby %}
+{% highlight python %}
 url = "https://www.adam4eve.eu/commodity.php?region=10000002&typeID=46375"
 result = requests.get(url)
 soup = BeautifulSoup(result.content, 'html.parser')
@@ -69,7 +69,7 @@ O que eu quero agora é extrair dados de uma parte específica da página: uma t
 
 Observe a seguinte função:
 
-{% highlight ruby %}
+{% highlight python %}
 def scraper():
     sectioncontent = soup.find('table', class_='no_border')
     print(sectioncontent)
@@ -81,7 +81,7 @@ Na passagem de parâmetros, <code>'table'</code> é referente ao elemento <em>ta
 
 A saída desta função no console mostra o elemento <i><b>table</b></i> e todos os seus descendentes:
 
-{% highlight ruby %}
+{% highlight html %}
     <table class="no_border">
     <tr><td style="vertical-align: top">
     <table style="background-color: white; border: 1px solid darkgrey; font-size: 0.8em">
@@ -143,7 +143,7 @@ Mas o método <code>get_text()</code> também retorna trechos de texto. Qual é,
 
 Observe as funções abaixo:
 
-{% highlight ruby %}
+{% highlight python %}
 def scraper2():
     print("-----função scraper2()----")
     sectioncontent = soup.find('table', class_='no_border')
@@ -157,7 +157,7 @@ def scraper3():
 {% endhighlight %}
 
 Saída no console:
-
+```
     -----função scraper2()----
     None
 
@@ -201,7 +201,7 @@ Saída no console:
     MetaGroup:Tech I
 
 
-
+```
 
 A primeira função, <code>scraper2()</code>, usa a função <code>get_text()</code> para retornar o texto contido no elemento <i><b>table</b></i>, mas a sua saída no console é "None". Por sua vez, a segunda função, <code>scraper3()</code>, exibe o que realmente era desejado. Por que isso acontece?
 
@@ -220,7 +220,7 @@ Para resolver este problema, o Beautiful Soup nos oferece a passagem de parâmet
 
 Feito isso, ainda temos um pequeno problema: um dos elementos veio com um link âncora que não será útil. O trecho "Pilot's Services / Skill Trading". Este trecho está dentro de uma tag <i>span</i>. Irei removê-lo acessando diretamente o atributo <code>name="1"</code> que está dentro da tag, usando o <code>.attrs</code> e usando também mais um método Beautiful Soup: o <code>clear()</code>.
 
-{% highlight ruby %}
+{% highlight python %}
 def save_scrap():
     sectioncontent = soup.find('table', class_='no_border')
     #remove o trecho “Pilot’s Services / Skill Trading”

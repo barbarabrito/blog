@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: bárbara.blog
+title: λ
 email: barbaramabrito@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
 
@@ -26,7 +26,10 @@ baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://barbarabrito.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 github_username: barbarabrito
-linkedin_username: barbara-brito-665a5a232/
+linkedin_username: barbaramabrito
+
+read_time: true
+words_per_minute: 200
 
 # Build settings
 theme: minima
@@ -52,3 +55,8 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM

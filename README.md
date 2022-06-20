@@ -1,3 +1,3 @@
 # blog
 
-https://barbarabrito.github.io/blog/
+https://barbarabrito.github.io/blog
